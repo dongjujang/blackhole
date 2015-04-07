@@ -7,7 +7,6 @@ import (
 )
 
 func RemoveImages() {
-
   docker, err := dockerclient.NewDockerClient("unix:///var/run/docker.sock", nil)
   if err != nil {
     log.Fatal(err)
