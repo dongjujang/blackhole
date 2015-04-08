@@ -4,6 +4,8 @@ import (
   "github.com/samalba/dockerclient"
   "log"
   "time"
+  "os"
+  "strconv"
 )
 
 func RemoveImages() {
@@ -31,9 +33,22 @@ func RemoveImages() {
 }
 
 func main() {
+  sleep_time_str := os.Getenv("SLEEP_TIME")
+  var sleep_time int
+
+  if sleep_time_str == "" {
+    sleep_time = 60
+  } else {
+    sleep_time_int, err := strconv.Atoi(sleep_time_str)
+    if err != nil {
+      log.Fatal(err)
+    }
+    sleep_time = sleep_time_int
+  }
+  
   for true {
     RemoveImages()
-    time.Sleep(1 * time.Hour)
+    time.Sleep(time.Duration(sleep_time) * time.Minute)
   }
 }
 
