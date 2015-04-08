@@ -32,9 +32,9 @@ func RemoveImages() {
   }
 }
 
-func main() {
+func SleepTime() int {
   sleep_time_str := os.Getenv("SLEEP_TIME")
-  var sleep_time int
+    var sleep_time int
 
   if sleep_time_str == "" {
     sleep_time = 60
@@ -45,10 +45,13 @@ func main() {
     }
     sleep_time = sleep_time_int
   }
-  
+  return sleep_time
+}
+
+func main() {  
   for true {
     RemoveImages()
-    time.Sleep(time.Duration(sleep_time) * time.Minute)
+    time.Sleep(time.Duration(SleepTime()) * time.Minute)
   }
 }
 
