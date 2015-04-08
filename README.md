@@ -1,10 +1,15 @@
-# blackhole
+# Blackhole
 
-Remove untagged images
+Blackhole is a cleaner that remove untagged docker images
 
-###ENV
+###Environment variable
 
-SLEEP_TIME(minute)
-if you don't set env, default is 60(=1hour)
+* SLEEP_TIME(minute)
 
-    docker run -d --name <container name> -e SLEEP_TIME=<minute> -v /var/run/docker.sock:/var/run/docker.sock dongjujang/blackhole
+If you don't set SLEEP_TIME, default is 60(=1hour)
+
+###RUN
+
+```
+$ docker run -d --name <container name> -e SLEEP_TIME=<minute> -v /var/run/docker.sock:/var/run/docker.sock dongjujang/blackhole
+```
