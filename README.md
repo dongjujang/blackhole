@@ -1,5 +1,7 @@
 # Blackhole
 
+[![Build Status](https://travis-ci.org/dongjujang/blackhole.svg)](https://travis-ci.org/dongjujang/blackhole)
+
 Blackhole is a cleaner that remove untagged docker images. It makes your docker images are always clean without untagged images.
 
 ###Environment variable
