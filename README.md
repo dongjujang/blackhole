@@ -1,6 +1,6 @@
 # Blackhole
 
-Blackhole is a cleaner that remove untagged docker images
+Blackhole is a cleaner that remove untagged docker images. It makes your docker images are always clean without untagged images.
 
 ###Environment variable
 
